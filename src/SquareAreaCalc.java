@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class SquareAreaCalc {
     public static void main(String args[]) {
-        System.out.println("Введите длину стороны квадрата:");
+        System.out.print("Введите длину стороны квадрата: ");
         Scanner scanner = new Scanner(System.in);
         int side = scanner.nextInt();
         Square sqObj = new Square(side);

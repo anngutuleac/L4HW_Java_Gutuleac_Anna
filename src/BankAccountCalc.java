@@ -11,13 +11,13 @@ public class BankAccountCalc {
         char choise = scanner.next().charAt(0);
         switch (choise) {
             case '1':
-                System.out.println("Введите сумму которую хотите добавить:");
+                System.out.print("Введите сумму которую хотите добавить: ");
                 int additionalSum = scanner.nextInt();
                 BankOperation.addMoney(additionalSum, accObj);
                 System.out.println("Ваш баланс: " + accObj.balance);
                 break;
             case '2':
-                System.out.println("Введите сумму которую хотите снять:");
+                System.out.print("Введите сумму которую хотите снять: ");
                 int extractionSum = scanner.nextInt();
                 BankOperation.extractMoney(extractionSum, accObj);
                 System.out.println("Ваш баланс: " + accObj.balance);

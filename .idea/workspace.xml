@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f2c2a2c-1af2-4ee5-91f7-09190724ff03" name="Changes" comment="Make lesson 4 homework">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BankAccountCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankAccountCalc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SquareAreaCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SquareAreaCalc.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +56,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687101216276</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Make lesson 4 homework">
+      <created>1687112998481</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687112998481</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Make lesson 4 homework">
+      <created>1687113102460</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687113102460</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
