@@ -1,16 +1,34 @@
+import java.util.Scanner;
 public class BankAccountCalc {
     public static void main(String args[]) {
-        BankAccount accObj = new BankAccount(111, 100);
-        BankOperation.addMoney(25.5, accObj);
-        System.out.println(accObj.balance);
-        BankOperation.addMoney(0, accObj);
-        System.out.println(accObj.balance);
-        BankOperation.extractMoney(50, accObj);
-        System.out.println(accObj.balance);
-        BankOperation.extractMoney(0, accObj);
-        System.out.println(accObj.balance);
-        BankOperation.extractMoney(150, accObj);
-        System.out.println(accObj.balance);
+        Scanner scanner = new Scanner(System.in);
+        BankAccount accObj = new BankAccount(12345, 100);
+
+        System.out.println("Выберите операцию, которую хотите совершить:");
+        System.out.println("1. Поставить деньги на счет");
+        System.out.println("2. Снять деньги со счета");
+        System.out.println("3. Проверить баланс");
+        char choise = scanner.next().charAt(0);
+        switch (choise) {
+            case '1':
+                System.out.println("Введите сумму которую хотите добавить:");
+                int additionalSum = scanner.nextInt();
+                BankOperation.addMoney(additionalSum, accObj);
+                System.out.println("Ваш баланс: " + accObj.balance);
+                break;
+            case '2':
+                System.out.println("Введите сумму которую хотите снять:");
+                int extractionSum = scanner.nextInt();
+                BankOperation.extractMoney(extractionSum, accObj);
+                System.out.println("Ваш баланс: " + accObj.balance);
+                break;
+            case '3':
+                System.out.println("Ваш баланс: " + accObj.balance);
+                break;
+            default:
+                System.out.println("Выбран неверный номер операции");
+                break;
+        }
     }
 }
 
@@ -18,33 +36,37 @@ class BankAccount {
     int accNumber;
     double balance;
 
-    public BankAccount(int accNumber, double balance) {
-        this.accNumber = accNumber;
-        if (balance < 0) {
-            this.balance = 0;
-        } else {
-            this.balance = balance;
+    public BankAccount(int accNumber, double balance) throws IllegalArgumentException {
+        if (accNumber < 0) {
+            throw new IllegalArgumentException("Номер счета должен быть неотрицательным!");
         }
+        if (balance < 0) {
+            throw new IllegalArgumentException("Баланс должен быть неотрицательным!");
+        }
+        this.accNumber = accNumber;
+        this.balance = balance;
     }
 
 }
 
 class BankOperation {
-    static void addMoney(double money, BankAccount account) {
+    static void addMoney(int money, BankAccount account) {
         if (money > 0) {
             account.balance += money;
+            System.out.println("Баланс был успешно пополнен на сумму: " + money);
         } else {
             System.out.println("Сумма пополнения должна быть больше нуля");
         }
     }
 
-    static void extractMoney(double money, BankAccount account) {
+    static void extractMoney(int money, BankAccount account) {
         if (money <= 0) {
             System.out.println("Сумма снятия должна быть больше нуля");
         } else if (money <= account.balance) {
             account.balance -= money;
+            System.out.println("Возьмите деньги");
         } else {
-            System.out.println("На вашем счету не достаточно средств для снятия этой суммы");
+            System.out.println("На счету не достаточно средств для снятия этой суммы");
         }
     }
 }

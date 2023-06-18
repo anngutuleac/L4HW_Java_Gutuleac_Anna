@@ -1,8 +1,12 @@
+import java.util.Scanner;
 public class SquareAreaCalc {
     public static void main(String args[]) {
-        Square sqObj = new Square(16);
+        System.out.println("Введите длину стороны квадрата:");
+        Scanner scanner = new Scanner(System.in);
+        int side = scanner.nextInt();
+        Square sqObj = new Square(side);
         System.out.println("Площадь квадрата со стороной "
-                + sqObj.side
+                + side
                 + " равна "
                 + sqObj.squareArea()
         );
@@ -11,13 +15,15 @@ public class SquareAreaCalc {
 class Square {
     int side;
 
-    public Square(int side) {
+    public Square(int side) throws IllegalArgumentException {
+        if (side < 0) {
+            throw new IllegalArgumentException("Длина должна быть неотрицательной!");
+        }
         this.side = side;
     }
 
     int squareArea() {
-        int square = side * side;
-        return square;
+        return side * side;
     }
 }
 
